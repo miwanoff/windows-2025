@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Open the window" onclick="testWindow()" />
+    <script>
+        function testWindow() {
+            let w = window.open('', 'wt', 'height=100,width=400,left=440,top=220');
+            w.document.write('Click <em>Close</em> button to close this window');
+            w.document.write('<p><input type=button value="Close" onclick="window.close()" /></p>');
+        }
+
+    </script>
+</body>
+
+</html>

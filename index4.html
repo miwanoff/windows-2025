@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="f2">
+        <input type="text" name="input_main" />
+        <input type="button" value="Open" onclick="create_window()" />
+    </form>
+
+    <script>
+        function create_window() {
+            let wt = window.open('', 'wt', 'height=100,width=400,left=440,top=220');
+            wt.document.write('<script>');
+            wt.document.write('function doclose() {');
+            wt.document.write(' if (opener && !opener.closed) ');
+            wt.document.write(' opener.document.forms["f2"].input_main.value=' + 'document.forms["c2"].input_child.value;'); // работа с формами - см. далее
+            wt.document.write(' window.close()');
+            wt.document.write('}');
+            wt.document.write('</scr' + 'ipt>');
+            wt.document.write('<form name=c2>');
+            wt.document.write('<input type=text name="input_child">');
+            wt.document.write('<input type=button value="Close" onclick="doclose()">');
+            wt.document.write('</form>');
+        } 
+    </script>
+
+</body>
+
+</html>
