@@ -8,14 +8,17 @@
 </head>
 
 <body>
-    <a href="javascript:void(centerwindow('test.html','cw',400,200))">Show the window</a>
+    <!-- <a href="javascript:void(centerwindow('test.html','cw',400,200))">Show the window</a> -->
+
+    <button type="button" onclick="centerwindow('test.html','cw',400,200)">Open Window</button>
 
     <script>
         function centerwindow(url, name, width, height) {
             let leftpos = (screen.width - width) / 2;
             let toppos = (screen.height - height) / 2;
-            return window.open(url, name, 'width=' + width + ',height=' + height + ',left=' + leftpos + ',top=' + toppos);
+            return window.open(url, name, `width=${width},height=${height},left=${leftpos},top=${toppos}`);
         } 
+        // width=400,height=200,left=440,top=220
     </script>
 </body>
 
