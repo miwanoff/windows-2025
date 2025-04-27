@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:void(centerwindow('test.html','cw',400,200))">Show the window</a>
+
+    <script>
+        function centerwindow(url, name, width, height) {
+            let leftpos = (screen.width - width) / 2;
+            let toppos = (screen.height - height) / 2;
+            return window.open(url, name, 'width=' + width + ',height=' + height + ',left=' + leftpos + ',top=' + toppos);
+        } 
+    </script>
+</body>
+
+</html>
